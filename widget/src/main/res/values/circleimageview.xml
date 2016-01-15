@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="edgeColor" format="color" />
+        <attr name="edgeWidth" format="dimension|reference" />
+    </declare-styleable>
+
+</resources>

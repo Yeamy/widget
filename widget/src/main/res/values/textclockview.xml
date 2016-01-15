@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TextClockView">
+        <attr name="format" format="reference|string" />
+        <attr name="text" format="reference|string" />
+    </declare-styleable>
+
+    <string name="date_format">yyyy.M.d E</string>
+
+</resources>
