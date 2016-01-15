@@ -77,7 +77,6 @@ public class CircleImageView extends ImageView {
         ViewCompat.setLayerType(this, ViewCompat.LAYER_TYPE_SOFTWARE, shadowPaint);
     }
 
-
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
