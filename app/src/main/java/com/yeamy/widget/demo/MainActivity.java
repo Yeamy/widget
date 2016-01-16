@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     new Bean(ImageCheckButtonFragment.class),
                     new Bean(OvalImageViewFragment.class),
                     new Bean(ScaleIndicatorFragment.class),
+                    new Bean(SlideMenuFragment.class),
                     new Bean(StampViewFragment.class),
                     new Bean(TextClockViewFragment.class)
             };
