@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 public class ImageCheckButton extends ImageView implements Checkable {
     private boolean checked;
+    private OnCheckedChangeListener listener;
     private static final int[] CHECKED_STATE_SET = {android.R.attr.state_checked};
 
     public ImageCheckButton(Context context) {
@@ -31,7 +32,7 @@ public class ImageCheckButton extends ImageView implements Checkable {
         init(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes){
+    private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.ImageCheckButton, defStyleAttr, defStyleRes);
         boolean checked = a.getBoolean(R.styleable.ImageCheckButton_checked, false);
@@ -39,12 +40,15 @@ public class ImageCheckButton extends ImageView implements Checkable {
         setChecked(checked);
         setFocusable(true);
         setClickable(true);
-        setScaleType(ScaleType.CENTER);
     }
 
     @Override
     public boolean performClick() {
         toggle();
+
+        if (listener != null) {
+            listener.onCheckedChanged(ImageCheckButton.this, isChecked());
+        }
 
         final boolean handled = super.performClick();
         if (!handled) {
@@ -52,7 +56,6 @@ public class ImageCheckButton extends ImageView implements Checkable {
             // called, so we'll need to make one here instead.
             playSoundEffect(SoundEffectConstants.CLICK);
         }
-
         return handled;
     }
 
@@ -66,7 +69,7 @@ public class ImageCheckButton extends ImageView implements Checkable {
 
     @Override
     public int[] onCreateDrawableState(int extraSpace) {
-        final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
+        int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
         if (isChecked()) {
             mergeDrawableStates(drawableState, CHECKED_STATE_SET);
         }
@@ -83,7 +86,12 @@ public class ImageCheckButton extends ImageView implements Checkable {
         setChecked(!checked);
     }
 
-    public interface OnCheckedChangeListener {
-        public void onCheckedChanged(ImageCheckButton imageView, boolean isChecked);
+    public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
+        this.listener = listener;
     }
+
+    public interface OnCheckedChangeListener {
+        void onCheckedChanged(ImageCheckButton imageView, boolean isChecked);
+    }
+
 }
