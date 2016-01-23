@@ -43,7 +43,7 @@ public class ScaleIndicatorFragment extends Fragment {
     }
 
     private class Adapter extends FragmentStatePagerAdapter {
-        int[] colors = {0xffff0000, 0xff00ff00, 0xff0000ff};
+        int[] colors = {0xfff9bdbb, 0xff80cbc4, 0xffb3e6fc};
 
         public Adapter() {
             super(getChildFragmentManager());

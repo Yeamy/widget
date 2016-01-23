@@ -1,0 +1,38 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.yeamy.pagetransformer.MainActivity">
+
+    <item
+        android:id="@+id/action_transformer_default"
+        android:title="Default"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_depth"
+        android:title="Depth"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_zoomout"
+        android:title="ZoomOut"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_upperfan"
+        android:title="UpperFan"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_lowerfan"
+        android:title="LowerFan"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_cube"
+        android:title="Cube"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_turnstile"
+        android:title="TurnStile"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_transformer_translate"
+        android:title="Translate"
+        app:showAsAction="never" />
+</menu>

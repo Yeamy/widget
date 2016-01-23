@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         private class Bean {
             public Bean(Class<? extends Fragment> clazz) {
                 this.clazz = clazz;
-                this.name = clazz.getSimpleName();
+                this.name = clazz.getSimpleName().replace("Fragment", "");
             }
 
             Class<? extends Fragment> clazz;
@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     new Bean(ScaleIndicatorFragment.class),
                     new Bean(SlideMenuFragment.class),
                     new Bean(StampViewFragment.class),
-                    new Bean(TextClockViewFragment.class)
+                    new Bean(TextClockViewFragment.class),
+                    new Bean(PageTransformerFragment.class)
             };
 
             @Override
