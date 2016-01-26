@@ -122,7 +122,7 @@ public class PageTransformerFragment extends Fragment {
                 TextView textView = (TextView) rootView.findViewById(R.id.section_label);
                 int position = getArguments().getInt(ARG_SECTION_NUMBER);
                 textView.setText("Hello World from section: " + (position + 1));
-                int[] colors = {0xfff9bdbb, 0xff80cbc4, 0xffb3e6fc};
+                int[] colors = {0xfff9bdbb, 0xff80cbc4, 0xffb3e6fc, 0xfff9bdbb, 0xff80cbc4};
                 rootView.setBackgroundColor(colors[position]);
                 return rootView;
             }
