@@ -34,11 +34,11 @@ public class BrickLayout extends FrameLayout {
 
         final int count = getChildCount();
         boolean firstColumn = true;
-        int left = 0;
-        int top = 0;
+        int left = getPaddingLeft();
+        int top = getPaddingTop();
         int right;
         int bottom = 0;
-        int w = getMeasuredWidth();
+        int w = getMeasuredWidth() - getPaddingRight();
         for (int i = 0; i < count; i++) {
             final View child = this.getChildAt(i);
             int width = child.getMeasuredWidth();
@@ -53,7 +53,7 @@ public class BrickLayout extends FrameLayout {
             right = left + width;
             //new row
             if (right > w) {
-                left = 0;
+                left = getPaddingLeft();
                 top = bottom + dividerVertical;
                 right = left + width;
             }
@@ -65,8 +65,8 @@ public class BrickLayout extends FrameLayout {
             child.layout(left, top, right, btm);
             left = right;
         }
-        setMeasuredDimension(MeasureSpec.getSize(getMeasuredWidth()), MeasureSpec.getSize(bottom));
-
+        setMeasuredDimension(MeasureSpec.getSize(getMeasuredWidth()),
+                MeasureSpec.getSize(bottom + getPaddingBottom()));
     }
 
     @Override
@@ -77,7 +77,7 @@ public class BrickLayout extends FrameLayout {
 //        Log.d(TAG, "changed = "+arg0+" left = "+arg1+" top = "+arg2+" right = "+arg3+" botom = "+arg4);
         final int count = getChildCount();
         boolean firstColumn = true;
-        int left = 0;
+        int left = getPaddingLeft();
         int top = 0;
         int right;
         int bottom = 0;
@@ -94,8 +94,8 @@ public class BrickLayout extends FrameLayout {
             //right
             right = left + width;
             //new row
-            if (right > r - l) {
-                left = 0;
+            if (right > r - l - getPaddingRight()) {
+                left = getPaddingLeft();
                 top = bottom + dividerVertical;
                 right = left + width;
             }
