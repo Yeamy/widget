@@ -127,7 +127,7 @@ public class StampView extends ImageView {
         if ((sides & LEFT) > 0) {
             float top = -dotSize / 2 - dx;
             float bottom = top + dotSize;
-            for (int i = 0; i < countY; i++) {
+            for (int i = 0; i < countX; i++) {
                 float left = i * per + distance;
                 float right = left + dotSize;
                 rectf.set(left, top, right, bottom);
