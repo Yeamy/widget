@@ -62,7 +62,6 @@ public class BrickLayout extends FrameLayout {
             if (btm > bottom) {
                 bottom = btm;
             }
-            child.layout(left, top, right, btm);
             left = right;
         }
         setMeasuredDimension(MeasureSpec.getSize(getMeasuredWidth()),
@@ -78,7 +77,7 @@ public class BrickLayout extends FrameLayout {
         final int count = getChildCount();
         boolean firstColumn = true;
         int left = getPaddingLeft();
-        int top = 0;
+        int top = getPaddingTop();
         int right;
         int bottom = 0;
         for (int i = 0; i < count; i++) {

@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         private class Adapter extends BaseAdapter implements AdapterView.OnItemClickListener {
             final Bean[] array = new Bean[]{
+                    new Bean(BrickLayoutFragment.class),
                     new Bean(CircleImageViewFragment.class),
                     new Bean(CollapsedScrollLayoutFragment.class),
                     new Bean(ImageCheckButtonFragment.class),
