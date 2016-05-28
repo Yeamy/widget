@@ -10,30 +10,29 @@ Custom Widget with demo.
 ### AutoScrollViewPager
 A custom ViewPager, auto scroll while there is more than ONE item in adapter, and auto stop scrolling when it cannot be seen.
 
-## BrickLayout
+### BrickLayout
 A custom grid view, layout child view from left to right and from top to bottom. Every row have same height.
 
-## CircleImageView
+#### CircleImageView
 
-# CollapsedScrollLayout
+### CollapsedScrollLayout
 
-## ImageCheckButton
+### ImageCheckButton
 
-## OnPageScrolledListener
+### OnPageScrolledListener
 
-## OvalImageView
+### OvalImageView
 
-## ScaleIndicatorLayout
+### ScaleIndicatorLayout
 
-## ScaleIndicatorView
+### ScaleIndicatorView
 
-## SlideMenuLayout
+### SlideMenuLayout, SlideMenuMaskView
 
-## SlideMenuMaskView
-
-## StampView
+### StampView
 A ImageView with jagged edges like stamps
 
-## TextClockView
+### TextClockView
+A TextView to show Time by String format
 
-## ViewUtils
+### ViewUtils
