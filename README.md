@@ -27,12 +27,12 @@ A custom grid view, layout child view from left to right and from top to bottom.
 
 #### ScaleIndicatorView
 
-#### SlideMenuLayout, SlideMenuMaskView
+#### SlideMenuLayout, SlideMenuMaskView  
 
 #### StampView
-A ImageView with jagged edges like stamps
+A ImageView with jagged edges like stamps  
 
 #### TextClockView
-A TextView to show Time by String format
+A TextView to show Time by String format  
 
 #### ViewUtils
