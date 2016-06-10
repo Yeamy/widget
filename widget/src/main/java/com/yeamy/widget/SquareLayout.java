@@ -57,7 +57,8 @@ public class SquareLayout extends ViewGroup {
         int column = columnCount;
         int row = count % column == 0 ? count / column : count / column + 1;
         int size = MeasureSpec.getSize(widthMeasureSpec) / column;
-        heightMeasureSpec = MeasureSpec.makeMeasureSpec(size * row, MeasureSpec.EXACTLY);
+        int height = size * row + (childPadding * (row - 1));
+        heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         int childSizeMeasureSpec = MeasureSpec.makeMeasureSpec(size, MeasureSpec.EXACTLY);
