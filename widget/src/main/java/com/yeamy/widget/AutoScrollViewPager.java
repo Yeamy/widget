@@ -30,7 +30,7 @@ public class AutoScrollViewPager extends ViewPager {
         setScroller(context, 700);
 
         final TypedArray a = context.obtainStyledAttributes(
-                attrs, com.android.internal.R.styleable.View, 0, 0);
+                attrs, R.styleable.AutoScrollViewPager, 0, 0);
         DelayMillis = (long) a.getFloat(R.styleable.AutoScrollViewPager_delayMillis, 3500L);
         a.recycle();
     }
