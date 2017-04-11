@@ -48,24 +48,34 @@ public class Gallery extends ViewPager {
     @Override
     public void setAdapter(PagerAdapter adapter) {
         super.setAdapter(adapter);
-        removeCallbacks(task);
-        postDelayed(task, DelayMillis);
+        task.start();
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        removeCallbacks(task);
-        postDelayed(task, DelayMillis);
+        task.start();
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        removeCallbacks(task);
+        task.stop();
     }
 
     private class Task extends SimpleOnPageChangeListener implements Runnable {
+        private boolean RUN;
+
+        public void start() {
+            RUN = true;
+            removeCallbacks(task);
+            postDelayed(this, DelayMillis);
+        }
+
+        public void stop() {
+            RUN = false;
+            removeCallbacks(this);
+        }
 
         /**
          * Called when the scroll state changes. Useful for discovering when the user
@@ -94,17 +104,23 @@ public class Gallery extends ViewPager {
 
         @Override
         public void run() {
-            PagerAdapter adapter = getAdapter();
-            if (adapter != null) {
-                int count = adapter.getCount();
-                if (count >= 2) {
-                    int next = getCurrentItem() + 1;
-                    if (next == count) {
-                        next = 0;
+            if (RUN) {
+                PagerAdapter adapter = getAdapter();
+                if (adapter != null) {
+                    try {// 老是喜欢报错!为什么?
+                        int count = adapter.getCount();
+                        if (count >= 2) {
+                            int next = getCurrentItem() + 1;
+                            if (next == count) {
+                                next = 0;
+                            }
+                            setCurrentItem(next, true);
+                            removeCallbacks(task);
+                            postDelayed(this, DelayMillis);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    setCurrentItem(next, true);
-                    removeCallbacks(task);
-                    postDelayed(this, DelayMillis);
                 }
             }
         }

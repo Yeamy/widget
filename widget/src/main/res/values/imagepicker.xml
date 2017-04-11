@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ImagePicker">
+        <attr name="limit" format="integer" />
+        <attr name="btnAdd" format="reference" />
+    </declare-styleable>
+
+</resources>

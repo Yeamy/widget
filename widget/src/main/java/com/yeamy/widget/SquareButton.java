@@ -34,9 +34,10 @@ public class SquareButton extends Button {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        heightMeasureSpec = MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(widthMeasureSpec),
-                MeasureSpec.getMode(heightMeasureSpec));
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int w_size = MeasureSpec.getSize(widthMeasureSpec);
+        int h_size = MeasureSpec.getSize(heightMeasureSpec);
+        int measureSpec = (w_size < h_size) ? widthMeasureSpec : heightMeasureSpec;
+        super.onMeasure(measureSpec, measureSpec);
     }
 
     @Override
